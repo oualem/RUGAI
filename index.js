@@ -1,9 +1,7 @@
-import dotenv from 'dotenv';
-dotenv.config();
-
-import fetch from 'node-fetch';
-import { PublicKey } from '@solana/web3.js';
-import { Client, GatewayIntentBits, SlashCommandBuilder, Routes, REST } from 'discord.js';
+require('dotenv').config();
+const { Client, GatewayIntentBits, SlashCommandBuilder, Routes, REST } = require('discord.js');
+const fetch = require('node-fetch');
+const { PublicKey } = require('@solana/web3.js');
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMembers] });
 
@@ -82,5 +80,8 @@ client.on('interactionCreate', async interaction => {
     }
   }
 });
+
+client.login(TOKEN);
+
 
 client.login(TOKEN);
