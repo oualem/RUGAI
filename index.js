@@ -1,7 +1,9 @@
-require('dotenv').config();
-const { Client, GatewayIntentBits, SlashCommandBuilder, Routes, REST } = require('discord.js');
-const fetch = require('node-fetch');
-const { PublicKey } = require('@solana/web3.js');
+import dotenv from 'dotenv';
+dotenv.config();
+
+import fetch from 'node-fetch';
+import { PublicKey } from '@solana/web3.js';
+import { Client, GatewayIntentBits, SlashCommandBuilder, Routes, REST } from 'discord.js';
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMembers] });
 
